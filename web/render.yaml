@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: craftengine-converter
+    runtime: node
+    plan: free
+    root: web
+    buildCommand: npm ci
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20.0.0
+      - key: PORT
+        render: true

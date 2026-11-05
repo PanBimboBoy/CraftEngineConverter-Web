@@ -1,0 +1,15 @@
+storage-type: SQLITE
+
+table-prefix: "cec_"
+# IP Address of the machine the database is hosted on
+host: 192.168.10.10
+# Port of the database, by default, MYSQL's port is 3306
+port: 3306
+# Database username
+user: homestead
+# Database password
+password: 'secret'
+# Database
+database: homestead_db
+# Enable of not the SQL debug mode
+debug: false

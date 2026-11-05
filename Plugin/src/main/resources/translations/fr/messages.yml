@@ -1,0 +1,288 @@
+# Don't change this
+version: "${version}"
+time:
+  format:
+    year: "%02d %year% %02d %month% %02d %day% %02d %hour% %02d %minute% %02d %second% %02d %millisecond%"
+    month: "%02d %month% %02d %day% %02d %hour% %02d %minute% %02d %second% %02d %millisecond%"
+    week: "%02d %week% %02d %day% %02d %hour% %02d %minute% %02d %second% %02d %millisecond%"
+    day: "%02d %day% %02d %hour% %02d %minute% %02d %second% %02d %millisecond%"
+    hour: "%02d %hour% %02d %minute% %02d %second% %02d %millisecond%"
+    minute: "%02d %minute% %02d %second% %02d %millisecond%"
+    second: "%02d %second% %02d %millisecond%"
+    millisecond: "%02d %millisecond%"
+  unit:
+    year: an
+    years: ans
+    month: mois
+    months: mois
+    week: semaine
+    weeks: semaines
+    day: jour
+    days: jours
+    hour: heure
+    hours: heures
+    minute: minute
+    minutes: minutes
+    second: seconde
+    seconds: secondes
+    millisecond: milliseconde
+    milliseconds: millisecondes
+command:
+  prefix: "&#FFD166C&#FFC863r&#FEBF61a&#FEB65Ef&#FEAD5Bt&#FEA459E&#FD9B56n&#FD9253g&#FD8951i&#FC814En&#FC784Ce&#FC6F49C&#FB6646o&#FB5D44n&#FB5441v&#FB4B3Ee&#FA423Cr&#FA3939t ┃&r "
+  no-permission: "§cVous n'avez pas la permission d'exécuter cette commande."
+  player-only: "§cSeul un joueur peut exécuter cette commande."
+  no-args: "§cImpossible de trouver la commande avec ses arguments."
+  syntax:
+    error: "§cVous devez exécuter la commande ainsi§7 : §a%syntax%"
+    help: "§f%syntax% §7» §7%description%"
+  reload:
+    description: Recharge la configuration et les messages du plugin.
+    success: "§aConfiguration et messages du plugin rechargés en §c%time%§a."
+    failure: "§cUne erreur est survenue lors du rechargement de la configuration et des messages du plugin. Vérifiez la console pour plus de détails."
+  converter:
+    description: Convertit les items d'un autre plugin au format CraftEngine.
+    not-supported: "§cLe plugin §e%plugin%§c n'est pas supporté pour la conversion."
+    start:
+      single: "§aDébut de la conversion pour §e%plugin%§a..."
+      all: "§aDébut de la conversion pour tous les plugins supportés..."
+    complete:
+      single: "§aConversion terminée pour §e%plugin%§a ! En §c%time%§a."
+      all: "§aConversion terminée pour tous les plugins ! En §c%time%§a."
+    dry-run-note: "§eNote§7 : Ceci était une simulation, aucun changement n'a été appliqué."
+    already-running: "§cUne conversion est déjà en cours. Veuillez attendre qu'elle se termine avant d'en démarrer une nouvelle. Ou ajoutez --force pour forcer le démarrage d'une nouvelle conversion (la précédente sera annulée)."
+    force-stopping: "§eOption --force détectée. Arrêt de toutes les conversions en cours..."
+    threads:
+      info: "§aUtilisation de §e%threads%§a threads pour la conversion."
+      error-too-many: "§cLe nombre de threads spécifié dépasse le nombre de processeurs disponibles (%max%). Utilisation du maximum disponible."
+  clear-files-cache:
+    description: Efface le cache de fichiers utilisé par le plugin. Ajoutez --all pour effacer tous les fichiers mis en cache, sinon seuls les fichiers obsolètes seront effacés.
+    complete: "§aEffacé §e%cleared_files%§a fichiers du cache en §c%time%§a."
+  world-converter:
+    description: Convertit les blocs du monde d'autres plugins au format CraftEngine.
+    start: "§aDébut de la conversion du monde pour §e%chunks%§a chunks..."
+    complete: "§aConversion du monde terminée ! §e%chunks%§a chunks avec §e%blocks%§a blocs et §e%furniture%§a meubles convertis en §c%time%§a."
+    already-running: "§cUne conversion du monde est déjà en cours. Utilisez --force pour annuler la conversion actuelle et en démarrer une nouvelle."
+    force-stopping: "§eOption --force détectée. Arrêt de la conversion du monde en cours..."
+    clear-cached-chunks:
+      description: Efface le cache des chunks traités pour le convertisseur de monde.
+      complete: "§aEffacé §e%chunks%§a chunks traités du cache en §c%time%§a."
+    restore:
+      description: Restaure les blocs et entités convertis à leur état d'origine.
+      start: "§aDébut de la restauration de §e%count%§a blocs/entités..."
+      single:
+        success: "§aBloc/entité restauré à §e%x%§a, §e%y%§a, §e%z%§a à son état d'origine."
+        not-found: "§cAucun historique de conversion trouvé pour le bloc/l'entité à §e%x%§a, §e%y%§a, §e%z%§a."
+        already-reverted: "§eBloc/entité à §e%x%§a, §e%y%§a, §e%z%§a déjà restauré."
+      all:
+        confirm: "§eCeci restaurera §c%count%§e blocs/entités convertis. Utilisez §a--confirm§e pour continuer."
+        start: "§aDébut de la restauration de §e%count%§a blocs/entités..."
+        complete: "§aRestauré §e%restored%§a/§e%total%§a blocs/entités en §c%time%§a."
+        none: "§eAucun bloc ou entité converti à restaurer."
+      database-disabled: "§cLa base de données n'est pas activée. La restauration nécessite l'historique en base de données."
+message:
+  plugin:
+    startup:
+      start: Activation du plugin ...
+      complete: "Plugin activé en §c%time%§a."
+    shutdown:
+      start: Désactivation du plugin ...
+      complete: "Plugin désactivé en §c%time%§a."
+    configuration:
+      loaded: "§aConfiguration du plugin chargée en §c%time%§a."
+  auto-converter:
+    startup:
+      start: La conversion automatique pour les plugins supportés démarre...
+      complete: "La conversion automatique pour les plugins supportés est terminée en §c%time%§a."
+      disabled: La conversion automatique est désactivée. Utilisez /cec convert pour convertir manuellement les plugins supportés.
+warning:
+  file:
+    delete-failure: "Échec de la suppression du fichier §e%file% (%path%)§c !"
+  folder:
+    delete-failure: "Échec de la suppression du dossier §e%folder% (%path%)§c !"
+  converter:
+    nexo:
+      tool:
+        no-blocks-found: "Aucun bloc valide trouvé pour les règles d'outil dans l'item §e%item%§c. Conversion des règles d'outil ignorée."
+      equippable:
+        unknown-slot: "Slot d'équipement §e%slot%§c inconnu pour l'item §e%item%§c."
+      tooltip-style:
+        unknown-style: "Style d'infobulle §e%style%§c inconnu pour l'item §e%item%§c."
+      use-cooldown:
+        invalid-seconds: "Valeur de secondes use_cooldown §e%seconds%§c invalide pour l'item §e%item%§c. Par défaut 1 seconde."
+      attack-range:
+        invalid-reach-format: "Format de portée §e%reach%§c invalide pour l'item §e%item%§c. Utilisation des valeurs par défaut."
+        invalid-reach-value: "Valeur de portée §e%reach%§c invalide pour l'item §e%item%§c. Utilisation des valeurs par défaut."
+      swing-animation:
+        invalid-type: "Valeur de type invalide pour swing_animation dans l'item §e%item%§c. Utilisation de la valeur par défaut (whack)."
+        invalid-duration: "Valeur de durée §e%duration%§c invalide pour swing_animation dans l'item §e%item%§c. Doit être positive. Par défaut (6)."
+      model:
+        process-failure: "Échec du traitement du chemin du modèle pour l'item §e%item%§c. Conversion de texture ignorée."
+        namespace-failure: "Échec du nommage (namespace) du chemin du modèle pour l'item §e%item%§c. Conversion de texture ignorée."
+        parent-not-supported: "Le parent_model §e%parent%§c pour l'item §e%item%§c n'est pas encore supporté. Conversion de texture ignorée. Veuillez le signaler au développeur."
+        generated:
+          missing-texture: "Aucun chemin de texture trouvé pour l'item §e%item%§c malgré un parent_model étant §e%parent%§c. Conversion de texture ignorée."
+          missing-texture-key: "Clé de texture manquante §e%key%§c pour l'item §e%item%§c avec le parent_model §e%parent%§c. Conversion de texture ignorée."
+        cube-top:
+          process-failure: "Échec du traitement des textures pour l'item §e%item%§c. Conversion de texture ignorée."
+          missing-texture: "Texture de côté ou du dessus manquante pour l'item §e%item%§c malgré un parent_model étant 'block/cube_top'. Conversion de texture ignorée."
+        bow:
+          process-failure: "Échec du traitement des chemins de modèle d'arc pour l'item §e%item%§c. Conversion de modèle d'arc ignorée."
+        crossbow:
+          process-failure: "Échec du traitement des chemins de modèle d'arbalète pour l'item §e%item%§c. Conversion de modèle d'arbalète ignorée."
+      custom-block:
+        sapling-not-supported: "La conversion du comportement de pousse pour l'item §e%item%§c n'est pas encore supportée. Comportement de pousse ignoré."
+        sapling-natural-only: "CraftEngine ne supporte que les pousses à croissance naturelle. La pousse pour l'item §e%item%§c poussera naturellement."
+        block-data-failure: "Échec de la création de BlockData pour la custom_variation §e%variation%§c de l'item §e%item%§c. Conversion ignorée."
+        unknown-minimal-type: "minimal_type §e%type%§c inconnu pour l'item §e%item%§c. Conversion minimal_type ignorée."
+        unknown-best-tool: "best_tool §e%tool%§c inconnu pour l'item §e%item%§c. Conversion best_tool ignorée."
+      recipe:
+        error:
+          failed-load-recipe-file: "§cÉchec du chargement du fichier de recette §e%file%§c. Conversion ignorée."
+          unknown-recipe-type-folder: "§cDossier de type de recette inconnu §e%type%§c dans le fichier §e%file%§c. Conversion ignorée."
+        no-mapping-ingredient: "§cAucun mappage trouvé pour l'ingrédient §e%item%§c dans la recette §e%recipe%§c."
+        no-mapping-result: "§cAucun mappage trouvé pour le résultat §e%item%§c dans la recette §e%recipe%§c."
+        no-mapping-input: "§cAucun mappage trouvé pour l'entrée §e%item%§c dans la recette §e%recipe%§c."
+        no-mapping-container: "§cAucun mappage trouvé pour le conteneur §e%item%§c dans la recette §e%recipe%§c."
+        could-not-determine-recipe-type: "§cImpossible de déterminer le type de recette pour le fichier §e%file%§c. Conversion ignorée."
+      sound:
+        file-not-found: "Fichier son introuvable au chemin : §e%path%§c."
+        sounds-file-empty: "Le fichier sons est vide au chemin : §e%path%§c."
+      language:
+        languages-file-empty: "Le fichier de langues est vide au chemin : §e%path%§c."
+        no-languages-found: Aucune langue trouvée dans le fichier de langues.
+      glyph:
+        no-glyphs-found: Aucun glyphe trouvé à convertir.
+      brewing-ingredient-no-mapping: "§cAucun mappage trouvé pour l'ingrédient de brassage §e%item%§c dans la recette §e%recipe%§c."
+    pack-directory-not-found: "Dossier de pack Nexo introuvable : %path%"
+    items-directory-not-found: "Dossier items introuvable : %path%"
+    emojis-directory-not-found: "Dossier emojis introuvable : %path%"
+    languages-file-not-found: "Fichier de langues introuvable : %path%"
+    recipes-directory-not-found: "Dossier recettes introuvable : %path%"
+    glyph-directory-not-found: "Dossier glyphes introuvable : %path%"
+    no-emojis-found: Aucun emoji à convertir.
+    circular-dependency: "§eDépendance circulaire détectée, retour à l'ordre original pour les éléments non résolus."
+    ia:
+      furniture:
+        unknown-display-transform: "§cType de transformation d'affichage de meuble inconnu §e%transform%§c pour l'item §e%item%§c."
+      items:
+        no-section: "Aucune section 'items' trouvée dans : §e%file%§c"
+        skipped-no-section: "Item ignoré (pas de section) : §e%item%§c dans le fichier : §e%file%§c"
+      images:
+        none-found: Aucune image de police ItemsAdder trouvée à convertir
+      languages:
+        none-found: Aucun fichier de langue ItemsAdder trouvé à convertir
+        no-entries-found: Aucune entrée de langue à convertir dans le dossier contents d'ItemsAdder.
+      sounds:
+        no-section: "Aucune section 'sounds' trouvée dans : §e%file%§c"
+        skipped-no-section: "Son ignoré (pas de section) : §e%sound%§c dans le fichier : §e%file%§c"
+      recipes:
+        no-section: "Aucune section 'recipes' trouvée dans : §e%file%§c"
+        skipped-unknown-type: "Recette ignorée (type inconnu) : §e%type%§c pour la recette : §e%recipe%§c dans le fichier : §e%file%§c"
+        skipped-no-section: "Recette ignorée (pas de section) : §e%recipe%§c dans le fichier : §e%file%§c"
+        anvil-repair-not-implemented: "La conversion de recette de réparation à l'enclume n'est pas encore implémentée pour : §e%recipe%§c"
+        unsupported-type: "Type de recette non supporté : §e%type%§c pour la recette : §e%recipe%§c"
+        unknown-machine-type: "Type de machine inconnu : §e%machine%§c pour la recette : §e%recipe%§c"
+        smithing-missing-base: "Base requise manquante pour la recette de forge : §e%recipe%§c dans le fichier : §e%file%§c"
+        unknown-item-reference: "Item ItemsAdder inconnu : §e%item%§c pour la recette : §e%recipe%§c dans le fichier : §e%file%§c"
+        item-reference-conversion-failure: "Impossible de convertir la référence d'item : §e%item%§c pour la recette : §e%recipe%§c dans le fichier : §e%file%§c"
+  furniture:
+    invalid-seat-format: "§cFormat de siège invalide pour le meuble §e%item%§c, 3 valeurs flottantes séparées par des virgules étaient attendues mais §e%value%§c a été reçu. Par défaut (0,0,0)."
+    unknown-display-transform: "§cdisplay_transform inconnue §e%transform%§c pour le meuble §e%item%§c, par défaut NONE."
+    unknown-tracking-rotation: "§ctracking_rotation inconnue §e%rotation%§c pour le meuble §e%item%§c, par défaut FIXED."
+    invalid-translation-size: "§cTaille de translation invalide pour le meuble §e%item%§c, 3 valeurs étaient attendues mais §e%size%§c ont été reçues. Par défaut (0,0,0)."
+    invalid-scale-format: "§cFormat d'échelle invalide pour le meuble §e%item%§c, 3 valeurs flottantes séparées par des virgules étaient attendues mais §e%value%§c a été reçu. Par défaut (1,1,1)."
+    invalid-amount-format: "§cFormat de quantité invalide §e%amount%§c pour le meuble §e%item%§c. Par défaut 1."
+    invalid-probability-format: "§cFormat de probabilité invalide §e%probability%§c pour le meuble §e%item%§c. Par défaut 1.0."
+    custom-drop-conditions-not-supported: "§cLes conditions de drop personnalisées (minimal_type, best_tool) pour le meuble §e%item%§c ne sont pas encore supportées. Celles-ci seront ignorées."
+    fortune-drop-no-loots: "§eLe meuble §e%item%§e a le drop basé sur la fortune activé mais aucun loot n'est défini. Veuillez définir des loots pour utiliser les drops basés sur la fortune."
+    invalid-shulker-entry: "§cEntrée shulker invalide §e%entry%§c pour l'item §e%item%§c."
+    non-numeric-shulker-values: "§cValeurs non numériques dans le shulker §e%entry%§c pour l'item §e%item%§c."
+    invalid-ghast-entry: "§cEntrée ghast invalide §e%entry%§c pour l'item §e%item%§c."
+    non-numeric-ghast-values: "§cValeurs non numériques dans le ghast §e%entry%§c pour l'item §e%item%§c."
+    invalid-interaction-entry: "§cEntrée interaction invalide §e%entry%§c pour l'item §e%item%§c."
+    non-numeric-interaction-values: "§cValeurs non numériques dans l'interaction §e%entry%§c pour l'item §e%item%§c."
+    invalid-barrier-entry: "§cEntrée de barrière invalide §e%entry%§c pour l'item §e%item%§c, 3 valeurs séparées par des virgules étaient attendues."
+    invalid-barrier-range: "§cIntervalle invalide §e%range%§c dans l'entrée de barrière §e%entry%§c."
+    non-numeric-barrier-range-bounds: "§cBornes d'intervalle non numériques §e%range%§c dans l'entrée de barrière §e%entry%§c."
+    non-numeric-barrier-value: "§cValeur non numérique §e%value%§c dans l'entrée de barrière §e%entry%§c."
+  no-assets-folder: "Dossier assets introuvable dans le ZIP §e%zip%§c."
+error:
+  failed-count-files-zip: "Échec du comptage des fichiers dans le zip : §e%zip%§c. Erreur : §e%message%§c"
+  extract-file-from-zip: "Échec de l'extraction du fichier §e%file%§c depuis le zip : §e%zip%§c. Erreur : §e%message%§c"
+  converter:
+    missing-dependency: "§cDépendance §e%item-id%§c introuvable dans aucun fichier."
+    item-load-failure: "Échec du chargement de l'item §e%item%§c depuis le fichier §e%file%§c."
+    failed-convert-emoji: "Échec de la conversion de l'emoji §e%emoji%§c dans le fichier §e%file%§c."
+    failed-convert-sound: "Échec de la conversion du son §e%sound%§c dans le fichier §e%file%§c."
+    recipes:
+      no-valid-ingredients: "§cAucun ingrédient valide trouvé pour la recette §e%recipe%§c dans le fichier §e%file%§c. Conversion ignorée."
+    invalid-glow-drop-color: "[%converter%] §c'%color%' n'est pas une couleur de drop lumineuse valide pour l'item §e%item%§c. Couleurs autorisées : §e%valid_colors%§c"
+    item-convert-exception: "Une erreur est survenue lors de la conversion de l'item §e%item%§c"
+    item-serialize-exception: "Une erreur est survenue lors de la sérialisation de l'item §e%item%§c"
+    failed-save-file: "Échec de la sauvegarde du fichier converti §e%type%§c : §e%file%§c"
+    nexo:
+      unsupported-recipe-type: "Type de recette non supporté : §e%type%§c pour la recette : §e%recipe%§c dans le fichier : §e%file%§c"
+      sound:
+        invalid-duration-format: "§cFormat de durée invalide §e%duration%§c pour le son §e%sound%§c."
+      language:
+        failed-convert-language: "Échec de la conversion de la langue §e%lang%§c dans le fichier §e%file%§c."
+        failed-convert-translation: "Échec de la conversion de la clé de traduction §e%key%§c pour la langue §e%lang%§c."
+      items:
+        conversion-exception: Une erreur est survenue lors de la conversion des items Nexo
+      emojis:
+        conversion-exception: Une erreur est survenue lors de la conversion des emojis Nexo
+      images:
+        conversion-exception: Une erreur est survenue lors de la conversion des images Nexo
+        save-failure: "Échec de la sauvegarde du fichier image converti : §e%file%§c"
+        relative-path-failure: "Échec du calcul du chemin relatif pour le fichier image : §e%file%§c"
+      recipes:
+        conversion-exception: Une erreur est survenue lors de la conversion des recettes Nexo
+      sounds:
+        load-failure: "Échec du chargement du fichier sons Nexo : §e%file%§c"
+        convert-failure: "Échec de la conversion du fichier sons Nexo : §e%file%§c"
+      languages:
+        load-failure: "Échec du chargement du fichier de langues Nexo : §e%file%§c"
+        convert-failure: "Échec de la conversion du fichier de langues Nexo : §e%file%§c"
+      pack:
+        zip-extract-failure: "Échec de l'extraction des assets depuis le ZIP : §e%file%§c"
+      glyph:
+        failed-convert: "Échec de la conversion du glyphe §e%glyph%§c dans le fichier §e%file%§c."
+    ia:
+      contents-folder-not-found: "Dossier de contenu ItemsAdder non trouvé : §e%path%§c"
+      output-folder-creation-failed: "Échec de la création du dossier de sortie : §e%path%§c"
+      item-conversion-exception: Une erreur est survenue lors de la conversion des items ItemsAdder
+      missing-name-mapping: "Aucun mappage de nom CraftEngine trouvé pour le bloc ItemsAdder §e%block%§c. Conversion de l'état du bloc ignorée."
+      block-state-conversion-failure: "Échec de la conversion de l'état du bloc ItemsAdder pour §e%block%§c avec la variation §e%variation%§c. Conversion ignorée."
+      items:
+        conversion-failure: "Échec de la conversion de l'item ItemsAdder : §e%item%§c dans le fichier : §e%file%§c"
+      languages:
+        count-failure: "Échec du comptage des entrées dans : §e%file%§c"
+        conversion-exception: Une erreur est survenue lors de la conversion des langues ItemsAdder
+        key-conversion-failure: "Échec de la conversion de la clé de traduction ItemsAdder : §e%key%§c pour la langue : §e%lang%§c dans le fichier : §e%file%§c"
+        file-conversion-failure: "Échec de la conversion du fichier de langue ItemsAdder : §e%file%§c"
+      images:
+        conversion-exception: Une erreur est survenue lors de la conversion des images de police ItemsAdder
+      sounds:
+        conversion-failure: "Échec de la conversion du son ItemsAdder : §e%sound%§c dans le fichier : §e%file%§c"
+        conversion-exception: Une erreur est survenue lors de la conversion des sons ItemsAdder
+      recipes:
+        conversion-exception: Une erreur est survenue lors de la conversion des recettes ItemsAdder
+        conversion-failure: "Échec de la conversion de la recette ItemsAdder : §e%recipe%§c dans le fichier : §e%file%§c"
+  cache:
+    null-result: "Le cache a retourné null pour le chemin : §e%path%§c"
+    exception: "Une erreur est survenue lors de l'accès au cache pour le chemin : §e%path%§c. Erreur : §e%message%§c"
+  mkdir-failure: "Échec de la création du dossier §e%directory% (%path%)§c !"
+  file:
+    copy-exception: "Une erreur est survenue lors de la copie du fichier §e%file%§c : §e%message%§c"
+    load-failure: "Impossible de charger le fichier '%file%' : fichier introuvable ou format YAML invalide"
+  file-operations:
+    timeout: Délai d'attente dépassé pour l'achèvement des opérations sur les fichiers
+    force-shutdown: Arrêt forcé des threads d'opérations sur les fichiers
+  json:
+    malformed-auto-fixed: "JSON malformé détecté dans §e%file%§c, corrigé automatiquement."
+    load-failure: "Impossible de charger le fichier JSON '%file%' : fichier introuvable ou format invalide"
+  pack-conversion:
+    exception: "Une erreur est survenue lors de la conversion du pack pour le plugin §e%plugin%§c"
+  plugin:
+    configuration:
+      type-mismatch: "§cIncompatibilité de type pour §e%path%§c dans la configuration, attendu §e%expected%§c mais obtenu §e%got%§c, utilisation de la valeur par défaut : §e%default%§c"

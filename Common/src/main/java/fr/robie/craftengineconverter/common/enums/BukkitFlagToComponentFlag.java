@@ -1,0 +1,114 @@
+package fr.robie.craftengineconverter.common.enums;
+
+import fr.robie.craftengineconverter.api.enums.ComponentFlag;
+import org.bukkit.inventory.ItemFlag;
+
+public enum BukkitFlagToComponentFlag {
+
+    HIDE_MAX_STACK_SIZE(ComponentFlag.MAX_STACK_SIZE),
+    HIDE_MAX_DAMAGE(ComponentFlag.MAX_DAMAGE),
+    HIDE_DAMAGE(ComponentFlag.DAMAGE),
+    HIDE_UNBREAKABLE(ComponentFlag.UNBREAKABLE),
+    HIDE_CUSTOM_NAME(ComponentFlag.CUSTOM_NAME),
+    HIDE_ITEM_NAME(ComponentFlag.ITEM_NAME),
+    HIDE_ITEM_MODEL(ComponentFlag.ITEM_MODEL),
+    HIDE_LORE(ComponentFlag.LORE),
+    HIDE_RARITY(ComponentFlag.RARITY),
+    HIDE_ENCHANTMENTS(ComponentFlag.ENCHANTMENTS),
+    HIDE_CAN_PLACE_ON(ComponentFlag.CAN_PLACE_ON),
+    HIDE_CAN_BREAK(ComponentFlag.CAN_BREAK),
+    HIDE_ATTRIBUTE_MODIFIERS(ComponentFlag.ATTRIBUTE_MODIFIERS),
+    HIDE_CUSTOM_MODEL_DATA(ComponentFlag.CUSTOM_MODEL_DATA),
+    HIDE_TOOLTIP_DISPLAY(ComponentFlag.TOOLTIP_DISPLAY),
+    HIDE_REPAIR_COST(ComponentFlag.REPAIR_COST),
+    HIDE_ENCHANTMENT_GLINT_OVERRIDE(ComponentFlag.ENCHANTMENT_GLINT_OVERRIDE),
+    HIDE_INTANGIBLE_PROJECTILE(ComponentFlag.INTANGIBLE_PROJECTILE),
+    HIDE_FOOD(ComponentFlag.FOOD),
+    HIDE_CONSUMABLE(ComponentFlag.CONSUMABLE),
+    HIDE_USE_REMAINDER(ComponentFlag.USE_REMAINDER),
+    HIDE_USE_COOLDOWN(ComponentFlag.USE_COOLDOWN),
+    HIDE_DAMAGE_RESISTANT(ComponentFlag.DAMAGE_RESISTANT),
+    HIDE_TOOL(ComponentFlag.TOOL),
+    HIDE_WEAPON(ComponentFlag.WEAPON),
+    HIDE_ENCHANTABLE(ComponentFlag.ENCHANTABLE),
+    HIDE_EQUIPPABLE(ComponentFlag.EQUIPPABLE),
+    HIDE_REPAIRABLE(ComponentFlag.REPAIRABLE),
+    HIDE_GLIDER(ComponentFlag.GLIDER),
+    HIDE_TOOLTIP_STYLE(ComponentFlag.TOOLTIP_STYLE),
+    HIDE_DEATH_PROTECTION(ComponentFlag.DEATH_PROTECTION),
+    HIDE_BLOCKS_ATTACKS(ComponentFlag.BLOCKS_ATTACKS),
+    HIDE_STORED_ENCHANTMENTS(ComponentFlag.STORED_ENCHANTMENTS),
+    HIDE_DYED_COLOR(ComponentFlag.DYED_COLOR),
+    HIDE_MAP_COLOR(ComponentFlag.MAP_COLOR),
+    HIDE_MAP_ID(ComponentFlag.MAP_ID),
+    HIDE_MAP_DECORATIONS(ComponentFlag.MAP_DECORATIONS),
+    HIDE_MAP_POST_PROCESSING(ComponentFlag.MAP_POST_PROCESSING),
+    HIDE_CHARGED_PROJECTILES(ComponentFlag.CHARGED_PROJECTILES),
+    HIDE_BUNDLE_CONTENTS(ComponentFlag.BUNDLE_CONTENTS),
+    HIDE_POTION_CONTENTS(ComponentFlag.POTION_CONTENTS),
+    HIDE_POTION_DURATION_SCALE(ComponentFlag.POTION_DURATION_SCALE),
+    HIDE_SUSPICIOUS_STEW_EFFECTS(ComponentFlag.SUSPICIOUS_STEW_EFFECTS),
+    HIDE_WRITABLE_BOOK_CONTENT(ComponentFlag.WRITABLE_BOOK_CONTENT),
+    HIDE_WRITTEN_BOOK_CONTENT(ComponentFlag.WRITTEN_BOOK_CONTENT),
+    HIDE_TRIM(ComponentFlag.TRIM),
+    HIDE_INSTRUMENT(ComponentFlag.INSTRUMENT),
+    HIDE_PROVIDES_TRIM_MATERIAL(ComponentFlag.PROVIDES_TRIM_MATERIAL),
+    HIDE_OMINOUS_BOTTLE_AMPLIFIER(ComponentFlag.OMINOUS_BOTTLE_AMPLIFIER),
+    HIDE_JUKEBOX_PLAYABLE(ComponentFlag.JUKEBOX_PLAYABLE),
+    HIDE_PROVIDES_BANNER_PATTERNS(ComponentFlag.PROVIDES_BANNER_PATTERNS),
+    HIDE_RECIPES(ComponentFlag.RECIPES),
+    HIDE_LODESTONE_TRACKER(ComponentFlag.LODESTONE_TRACKER),
+    HIDE_FIREWORK_EXPLOSION(ComponentFlag.FIREWORK_EXPLOSION),
+    HIDE_FIREWORKS(ComponentFlag.FIREWORKS),
+    HIDE_PROFILE(ComponentFlag.PROFILE),
+    HIDE_NOTE_BLOCK_SOUND(ComponentFlag.NOTE_BLOCK_SOUND),
+    HIDE_BANNER_PATTERNS(ComponentFlag.BANNER_PATTERNS),
+    HIDE_BASE_COLOR(ComponentFlag.BASE_COLOR),
+    HIDE_POT_DECORATIONS(ComponentFlag.POT_DECORATIONS),
+    HIDE_CONTAINER(ComponentFlag.CONTAINER),
+    HIDE_BLOCK_STATE(ComponentFlag.BLOCK_DATA),
+    HIDE_CONTAINER_LOOT(ComponentFlag.CONTAINER_LOOT),
+    HIDE_BREAK_SOUND(ComponentFlag.BREAK_SOUND),
+    HIDE_VILLAGER_VARIANT(ComponentFlag.VILLAGER_VARIANT),
+    HIDE_WOLF_VARIANT(ComponentFlag.WOLF_VARIANT),
+    HIDE_WOLF_SOUND_VARIANT(ComponentFlag.WOLF_SOUND_VARIANT),
+    HIDE_WOLF_COLLAR(ComponentFlag.WOLF_COLLAR),
+    HIDE_FOX_VARIANT(ComponentFlag.FOX_VARIANT),
+    HIDE_SALMON_SIZE(ComponentFlag.SALMON_SIZE),
+    HIDE_PARROT_VARIANT(ComponentFlag.PARROT_VARIANT),
+    HIDE_TROPICAL_FISH_PATTERN(ComponentFlag.TROPICAL_FISH_PATTERN),
+    HIDE_TROPICAL_FISH_BASE_COLOR(ComponentFlag.TROPICAL_FISH_BASE_COLOR),
+    HIDE_TROPICAL_FISH_PATTERN_COLOR(ComponentFlag.TROPICAL_FISH_PATTERN_COLOR),
+    HIDE_MOOSHROOM_VARIANT(ComponentFlag.MOOSHROOM_VARIANT),
+    HIDE_RABBIT_VARIANT(ComponentFlag.RABBIT_VARIANT),
+    HIDE_PIG_VARIANT(ComponentFlag.PIG_VARIANT),
+    HIDE_COW_VARIANT(ComponentFlag.COW_VARIANT),
+    HIDE_CHICKEN_VARIANT(ComponentFlag.CHICKEN_VARIANT),
+    HIDE_FROG_VARIANT(ComponentFlag.FROG_VARIANT),
+    HIDE_HORSE_VARIANT(ComponentFlag.HORSE_VARIANT),
+    HIDE_PAINTING_VARIANT(ComponentFlag.PAINTING_VARIANT),
+    HIDE_LLAMA_VARIANT(ComponentFlag.LLAMA_VARIANT),
+    HIDE_AXOLOTL_VARIANT(ComponentFlag.AXOLOTL_VARIANT),
+    HIDE_CAT_VARIANT(ComponentFlag.CAT_VARIANT),
+    HIDE_CAT_COLLAR(ComponentFlag.CAT_COLLAR),
+    HIDE_SHEEP_COLOR(ComponentFlag.SHEEP_COLOR),
+    HIDE_SHULKER_COLOR(ComponentFlag.SHULKER_COLOR);
+
+    private final ComponentFlag componentFlag;
+
+    BukkitFlagToComponentFlag(ComponentFlag componentFlag) {
+        this.componentFlag = componentFlag;
+    }
+
+    public ComponentFlag getComponentFlag() {
+        return this.componentFlag;
+    }
+
+    public static ComponentFlag fromBukkitItemFlag(ItemFlag itemFlag) {
+        try {
+            return valueOf(itemFlag.name()).componentFlag;
+        } catch (IllegalArgumentException e) {
+            return null;
+        }
+    }
+}

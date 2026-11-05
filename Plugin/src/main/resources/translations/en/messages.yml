@@ -1,0 +1,288 @@
+# Don't change this
+version: "${version}"
+time:
+  format:
+    year: "%02d %year% %02d %month% %02d %day% %02d %hour% %02d %minute% %02d %second% %02d %millisecond%"
+    month: "%02d %month% %02d %day% %02d %hour% %02d %minute% %02d %second% %02d %millisecond%"
+    week: "%02d %week% %02d %day% %02d %hour% %02d %minute% %02d %second% %02d %millisecond%"
+    day: "%02d %day% %02d %hour% %02d %minute% %02d %second% %02d %millisecond%"
+    hour: "%02d %hour% %02d %minute% %02d %second% %02d %millisecond%"
+    minute: "%02d %minute% %02d %second% %02d %millisecond%"
+    second: "%02d %second% %02d %millisecond%"
+    millisecond: "%02d %millisecond%"
+  unit:
+    year: year
+    years: years
+    month: month
+    months: months
+    week: week
+    weeks: weeks
+    day: day
+    days: days
+    hour: hour
+    hours: hours
+    minute: minute
+    minutes: minutes
+    second: second
+    seconds: seconds
+    millisecond: millisecond
+    milliseconds: milliseconds
+command:
+  prefix: "&#FFD166C&#FFC863r&#FEBF61a&#FEB65Ef&#FEAD5Bt&#FEA459E&#FD9B56n&#FD9253g&#FD8951i&#FC814En&#FC784Ce&#FC6F49C&#FB6646o&#FB5D44n&#FB5441v&#FB4B3Ee&#FA423Cr&#FA3939t ┃&r "
+  syntax:
+    help: "§f%syntax% §7» §7%description%"
+    error: "§cYou must execute the command like this§7: §a%syntax%"
+  no-permission: "§cYou do not have permission to run this command."
+  player-only: "§cOnly one player can execute this command."
+  no-args: "§cImpossible to find the command with its arguments."
+  reload:
+    description: Reloads the plugin configuration and messages.
+    success: "§aPlugin configuration and messages reloaded in §c%time%§a."
+    failure: "§cAn error occurred while reloading the plugin configuration and messages. Check the console for more details."
+  converter:
+    description: Converts items from another plugin to CraftEngine format.
+    not-supported: "§cThe plugin §e%plugin%§c is not supported for conversion."
+    start:
+      single: "§aStarting conversion for §e%plugin%§a..."
+      all: "§aStarting conversion for all supported plugins..."
+    complete:
+      single: "§aConversion completed for §e%plugin%§a! In §c%time%§a."
+      all: "§aConversion completed for all plugins! In §c%time%§a."
+    dry-run-note: "§eNote§7: This was a dry run, no changes were applied."
+    already-running: "§cA conversion is already running. Please wait for it to complete before starting a new one. Or add --force to force start a new conversion (the previous one will be cancelled)."
+    force-stopping: "§eForce flag detected. Stopping all ongoing conversions..."
+    threads:
+      info: "§aUsing §e%threads%§a threads for conversion."
+      error-too-many: "§cThe number of threads specified exceeds the number of available processors (%max%). Using the maximum available."
+  clear-files-cache:
+    description: Clears the file cache used by the plugin. Add --all to clear all cached files else only stale files will be cleared.
+    complete: "§aCleared §e%cleared_files%§a files from the cache in §c%time%§a."
+  world-converter:
+    description: Converts world blocks from other plugins to CraftEngine format.
+    start: "§aStarting world conversion for §e%chunks%§a chunks..."
+    complete: "§aWorld conversion completed! Processed §e%chunks%§a chunks with §e%blocks%§a blocks and §e%furniture%§a furnitures converted in §c%time%§a."
+    already-running: "§cA world conversion is already running. Use --force to cancel the current conversion and start a new one."
+    force-stopping: "§eForce flag detected. Stopping ongoing world conversion..."
+    clear-cached-chunks:
+      description: Clears the processed chunks cache for world converter.
+      complete: "§aCleared §e%chunks%§a processed chunks from cache in §c%time%§a."
+    restore:
+      description: Restores converted blocks and entities to their original state.
+      start: "§aStarting restoration of §e%count%§a blocks/entities..."
+      single:
+        success: "§aRestored block/entity at §e%x%§a, §e%y%§a, §e%z%§a to original state."
+        not-found: "§cNo conversion history found for block/entity at §e%x%§a, §e%y%§a, §e%z%§a."
+        already-reverted: "§eBlock/entity at §e%x%§a, §e%y%§a, §e%z%§a was already reverted."
+      all:
+        confirm: "§eThis will restore §c%count%§e converted blocks/entities. Use §a--confirm§e to proceed."
+        start: "§aStarting restoration of §e%count%§a blocks/entities..."
+        complete: "§aRestored §e%restored%§a/§e%total%§a blocks/entities in §c%time%§a."
+        none: "§eThere are no converted blocks or entities to restore."
+      database-disabled: "§cDatabase is not enabled. Restoration requires database history."
+message:
+  plugin:
+    startup:
+      start: Enabling plugin ...
+      complete: "Plugin enabled in §c%time%§a!"
+    shutdown:
+      start: Disabling plugin ...
+      complete: "Plugin disabled in §c%time%§a!"
+    configuration:
+      loaded: "§aPlugin configuration loaded in §c%time%§a!"
+  auto-converter:
+    startup:
+      start: Auto-conversion for supported plugins is starting...
+      complete: "Auto-conversion for supported plugins completed! In §c%time%§a."
+      disabled: Auto-conversion is disabled. Use /cec convert to manually convert supported plugins.
+warning:
+  file:
+    delete-failure: "Failed to delete file §e%file% (%path%)§c!"
+  folder:
+    delete-failure: "Failed to delete folder §e%folder% (%path%)§c!"
+  converter:
+    nexo:
+      tool:
+        no-blocks-found: "No valid blocks found for tool rules in item §e%item%§c. Skipping tool rules conversion."
+      equippable:
+        unknown-slot: "Unknown equipment slot §e%slot%§c for item §e%item%§c."
+      tooltip-style:
+        unknown-style: "Unknown tooltip style §e%style%§c for item §e%item%§c."
+      use-cooldown:
+        invalid-seconds: "Invalid use_cooldown seconds value §e%seconds%§c for item §e%item%§c. Defaulting to 1 second."
+      attack-range:
+        invalid-reach-format: "Invalid reach format §e%reach%§c for item §e%item%§c. Using defaults."
+        invalid-reach-value: "Invalid reach value §e%reach%§c for item §e%item%§c. Using defaults."
+      swing-animation:
+        invalid-type: "Invalid type value for swing_animation in item §e%item%§c. Using default (whack)."
+        invalid-duration: "Invalid duration value §e%duration%§c for swing_animation in item §e%item%§c. Must be positive. Using default (6)."
+      model:
+        process-failure: "Failed to process model path for item §e%item%§c. Skipping texture conversion."
+        namespace-failure: "Failed to namespace model path for item §e%item%§c. Skipping texture conversion."
+        parent-not-supported: "§e%parent%§c parent_model for item §e%item%§c is not supported yet. Skipping texture conversion. Please report to the developer to add support for this parent_model."
+        generated:
+          missing-texture: "No texture path found for item §e%item%§c despite parent_model being §e%parent%§c. Skipping texture conversion."
+          missing-texture-key: "Missing texture key §e%key%§c for item §e%item%§c with parent_model §e%parent%§c. Skipping texture conversion."
+        cube-top:
+          process-failure: "Failed to process textures for item §e%item%§c. Skipping texture conversion."
+          missing-texture: "Missing side or top texture for item §e%item%§c despite parent_model being 'block/cube_top'. Skipping texture conversion."
+        bow:
+          process-failure: "Failed to process bow model paths for item §e%item%§c. Skipping bow model conversion."
+        crossbow:
+          process-failure: "Failed to process crossbow model paths for item §e%item%§c. Skipping crossbow model conversion."
+      custom-block:
+        sapling-not-supported: "Sapling behavior conversion for custom block item §e%item%§c is not supported yet. Skipping sapling behavior."
+        sapling-natural-only: "CraftEngine only supports naturally growing saplings. The sapling for custom block item §e%item%§c will grow naturally."
+        block-data-failure: "Failed to create BlockData for custom_variation §e%variation%§c for custom block item §e%item%§c. Skipping custom_variation conversion."
+        unknown-minimal-type: "Unknown minimal_type §e%type%§c for custom block item §e%item%§c. Skipping minimal_type conversion."
+        unknown-best-tool: "Unknown best_tool §e%tool%§c for custom block item §e%item%§c. Skipping best_tool conversion."
+      recipe:
+        no-mapping-ingredient: "§cNo mapping found for ingredient §e%item%§c in recipe §e%recipe%§c."
+        no-mapping-result: "§cNo mapping found for result item §e%item%§c in recipe §e%recipe%§c."
+        no-mapping-input: "§cNo mapping found for input item §e%item%§c in recipe §e%recipe%§c."
+        no-mapping-container: "§cNo mapping found for container item §e%item%§c in recipe §e%recipe%§c."
+        could-not-determine-recipe-type: "§cCould not determine recipe type for file §e%file%§c. Skipping file conversion."
+        error:
+          failed-load-recipe-file: "§cFailed to load recipe file §e%file%§c. Skipping file conversion."
+          unknown-recipe-type-folder: "§cUnknown recipe type folder for §e%type%§c in file §e%file%§c. Skipping file conversion."
+      sound:
+        file-not-found: "Sound file not found at path: §e%path%§c."
+        sounds-file-empty: "Sounds file is empty at path: §e%path%§c."
+      language:
+        languages-file-empty: "Languages file is empty at path: §e%path%§c."
+        no-languages-found: No languages found in languages file.
+      glyph:
+        no-glyphs-found: No glyphs found to convert.
+      brewing-ingredient-no-mapping: "§cNo mapping found for brewing ingredient §e%item%§c in recipe §e%recipe%§c."
+    pack-directory-not-found: "Nexo pack directory not found at: %path%"
+    items-directory-not-found: "Items directory not found at: %path%"
+    emojis-directory-not-found: "Emojis directory not found at: %path%"
+    languages-file-not-found: "Languages file not found at: %path%"
+    recipes-directory-not-found: "Recipes directory not found at: %path%"
+    glyph-directory-not-found: "Glyph directory not found at: %path%"
+    no-emojis-found: No emojis found to convert
+    circular-dependency: "§eCircular dependency detected, falling back to original order for unresolved items."
+    ia:
+      furniture:
+        unknown-display-transform: "§cUnknown furniture display transform type §e%transform%§c for item §e%item%§c."
+      items:
+        no-section: "No 'items' section found in: §e%file%§c"
+        skipped-no-section: "Skipped item (no section): §e%item%§c in file: §e%file%§c"
+      images:
+        none-found: No ItemsAdder font images found to convert
+      languages:
+        none-found: No ItemsAdder language files found to convert
+        no-entries-found: No language entries found to convert in the ItemsAdder contents folder.
+      sounds:
+        no-section: "No 'sounds' section found in: §e%file%§c"
+        skipped-no-section: "Skipped sound (no section): §e%sound%§c in file: §e%file%§c"
+      recipes:
+        no-section: "No 'recipes' section found in: §e%file%§c"
+        skipped-unknown-type: "Skipped recipe (unknown type): §e%type%§c for recipe: §e%recipe%§c in file: §e%file%§c"
+        skipped-no-section: "Skipped recipe (no section): §e%recipe%§c in file: §e%file%§c"
+        anvil-repair-not-implemented: "Anvil Repair recipe conversion not implemented yet for recipe: §e%recipe%§c"
+        unsupported-type: "Unsupported recipe type: §e%type%§c for recipe: §e%recipe%§c"
+        unknown-machine-type: "Unknown machine type: §e%machine%§c for recipe: §e%recipe%§c"
+        smithing-missing-base: "Missing required 'base' for smithing recipe: §e%recipe%§c in file: §e%file%§c"
+        unknown-item-reference: "Unknown ItemsAdder item: §e%item%§c for recipe: §e%recipe%§c in file: §e%file%§c"
+        item-reference-conversion-failure: "Could not convert item reference: §e%item%§c for recipe: §e%recipe%§c in file: §e%file%§c"
+  furniture:
+    invalid-seat-format: "§cInvalid seat format for furniture item §e%item%§c, expected 3 comma-separated float values but got §e%value%§c. Defaulting to (0,0,0)."
+    unknown-display-transform: "§cUnknown display_transform §e%transform%§c for furniture item §e%item%§c, defaulting to NONE."
+    unknown-tracking-rotation: "§cUnknown tracking_rotation §e%rotation%§c for furniture item §e%item%§c, defaulting to FIXED."
+    invalid-translation-size: "§cInvalid translation size for furniture item §e%item%§c, expected 3 values but got §e%size%§c. Defaulting to (0,0,0)."
+    invalid-scale-format: "§cInvalid scale format for furniture item §e%item%§c, expected 3 comma-separated float values but got §e%value%§c. Defaulting to (1,1,1)."
+    invalid-amount-format: "§cInvalid amount format §e%amount%§c for furniture item §e%item%§c. Defaulting to 1."
+    invalid-probability-format: "§cInvalid probability format §e%probability%§c for furniture item §e%item%§c. Defaulting to 1.0."
+    custom-drop-conditions-not-supported: "§cCustom drop conditions (minimal_type, best_tool) for furniture item §e%item%§c are not supported yet. Skipping custom drop conditions."
+    fortune-drop-no-loots: "§eFurniture item §e%item%§e has fortune-based drop enabled but no loots defined. Please define loots to use fortune-based drops."
+    invalid-shulker-entry: "§cInvalid shulker entry §e%entry%§c for item §e%item%§c."
+    non-numeric-shulker-values: "§cNon-numeric values in shulker §e%entry%§c for item §e%item%§c."
+    invalid-ghast-entry: "§cInvalid ghast entry §e%entry%§c for item §e%item%§c."
+    non-numeric-ghast-values: "§cNon-numeric values in ghast §e%entry%§c for item §e%item%§c."
+    invalid-interaction-entry: "§cInvalid interaction entry §e%entry%§c for item §e%item%§c."
+    non-numeric-interaction-values: "§cNon-numeric values in interaction §e%entry%§c for item §e%item%§c."
+    invalid-barrier-entry: "§cInvalid barrier entry §e%entry%§c for item §e%item%§c, expected 3 comma-separated values."
+    invalid-barrier-range: "§cInvalid range §e%range%§c in barrier entry §e%entry%§c."
+    non-numeric-barrier-range-bounds: "§cNon-numeric range bounds §e%range%§c in barrier entry §e%entry%§c."
+    non-numeric-barrier-value: "§cNon-numeric value §e%value%§c in barrier entry §e%entry%§c."
+  no-assets-folder: "Assets folder not found inside the ZIP §e%zip%§c."
+error:
+  failed-count-files-zip: "Failed to count files in zip: §e%zip%§c. Error: §e%message%§c"
+  extract-file-from-zip: "Failed to extract file §e%file%§c from zip: §e%zip%§c. Error: §e%message%§c"
+  converter:
+    missing-dependency: "§cDependency §e%item-id%§c not found in any file."
+    item-load-failure: "Failed to load item §e%item%§c from file §e%file%§c."
+    failed-convert-emoji: "Failed to convert emoji §e%emoji%§c in file §e%file%§c."
+    failed-convert-sound: "Failed to convert sound §e%sound%§c in file §e%file%§c."
+    recipes:
+      no-valid-ingredients: "§cNo valid ingredients found for recipe §e%recipe%§c in file §e%file%§c. Skipping recipe conversion."
+    invalid-glow-drop-color: "[%converter%] §c'%color%' is not a valid glow drop color for item §e%item%§c. Allowed colors: §e%valid_colors%§c"
+    nexo:
+      unsupported-recipe-type: "Unsupported recipe type: §e%type%§c for recipe: §e%recipe%§c in file: §e%file%§c"
+      sound:
+        invalid-duration-format: "§cInvalid duration format §e%duration%§c for sound §e%sound%§c."
+      language:
+        failed-convert-language: "Failed to convert language §e%lang%§c in file §e%file%§c."
+        failed-convert-translation: "Failed to convert translation key §e%key%§c for language §e%lang%§c."
+      items:
+        conversion-exception: An error occurred during Nexo items conversion
+      emojis:
+        conversion-exception: An error occurred during Nexo emojis conversion
+      images:
+        conversion-exception: An error occurred during Nexo images conversion
+        save-failure: "Failed to save converted image file: §e%file%§c"
+        relative-path-failure: "Failed to compute relative path for image file: §e%file%§c"
+      recipes:
+        conversion-exception: An error occurred during Nexo recipes conversion
+      sounds:
+        load-failure: "Failed to load Nexo sounds file: §e%file%§c"
+        convert-failure: "Failed to convert Nexo sounds file: §e%file%§c"
+      languages:
+        load-failure: "Failed to load Nexo languages file: §e%file%§c"
+        convert-failure: "Failed to convert Nexo languages file: §e%file%§c"
+      pack:
+        zip-extract-failure: "Failed to extract and copy assets from ZIP: §e%file%§c"
+      glyph:
+        failed-convert: "Failed to convert glyph §e%glyph%§c in file §e%file%§c."
+    ia:
+      contents-folder-not-found: "ItemsAdder contents folder not found: §e%path%§c"
+      output-folder-creation-failed: "Failed to create output folder: §e%path%§c"
+      item-conversion-exception: An error occurred during ItemsAdder item conversion
+      missing-name-mapping: "No CraftEngine name mapping found for ItemsAdder block §e%block%§c. Skipping block state conversion."
+      block-state-conversion-failure: "Failed to convert ItemsAdder block state for §e%block%§c with variation §e%variation%§c. Skipping block state conversion."
+      items:
+        conversion-failure: "Failed to convert ItemsAdder item: §e%item%§c in file: §e%file%§c"
+      languages:
+        count-failure: "Failed to count entries in: §e%file%§c"
+        conversion-exception: An error occurred during ItemsAdder language conversion
+        key-conversion-failure: "Failed to convert ItemsAdder translation key: §e%key%§c for language: §e%lang%§c in file: §e%file%§c"
+        file-conversion-failure: "Failed to convert ItemsAdder language file: §e%file%§c"
+      images:
+        conversion-exception: An error occurred during ItemsAdder font image conversion
+      sounds:
+        conversion-failure: "Failed to convert ItemsAdder sound: §e%sound%§c in file: §e%file%§c"
+        conversion-exception: An error occurred during ItemsAdder sound conversion
+      recipes:
+        conversion-exception: An error occurred during ItemsAdder recipe conversion
+        conversion-failure: "Failed to convert ItemsAdder recipe: §e%recipe%§c in file: §e%file%§c"
+    item-convert-exception: "An error occurred while converting item §e%item%§c"
+    item-serialize-exception: "An error occurred while serializing item §e%item%§c"
+    failed-save-file: "Failed to save converted §e%type%§c file: §e%file%§c"
+  cache:
+    null-result: "Cache returned null for path: §e%path%§c"
+    exception: "An error occurred while accessing the cache for path: §e%path%§c. Error: §e%message%§c"
+  mkdir-failure: "Failed to create directory §e%directory% (%path%)§c!"
+  file:
+    copy-exception: "An error occurred while copying file §e%file%§c: §e%message%§c"
+    load-failure: "Unable to load file '%file%': file not found or invalid YAML format"
+  file-operations:
+    timeout: Timeout waiting for file operations to complete
+    force-shutdown: Forcing shutdown of file operation threads
+  json:
+    malformed-auto-fixed: "Malformed JSON detected in §e%file%§c, auto-fixed."
+    load-failure: "Unable to load JSON file '%file%': file not found or invalid JSON format"
+  pack-conversion:
+    exception: "An error occurred during pack conversion for plugin §e%plugin%§c"
+  plugin:
+    configuration:
+      type-mismatch: "§cType mismatch for §e%path%§c in configuration, expected §e%expected%§c but got §e%got%§c, using default value: §e%default%§c"
